@@ -1,0 +1,164 @@
+{
+  "suggest.noselect": false,
+  "suggest.enablePreview": true,
+  "suggest.maxCompleteItemCount": 20,
+  "suggest.snippetIndicator": " ►",
+  "suggest.autoTrigger": "always",
+  "suggest.timeout": 5000,
+  "suggest.minTriggerInputLength": 1,
+  "suggest.acceptSuggestionOnCommitCharacter": true,
+
+  "diagnostic.enable": true,
+  "diagnostic.level": "information",
+  "diagnostic.refreshOnInsertMode": false,
+  "diagnostic.refreshAfterSave": true,
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextPrefix": " ❯❯❯ ",
+  "diagnostic.displayByAle": false,
+
+  "signature.enable": true,
+  "signature.target": "float",
+  "signature.hideOnTextChange": false,
+
+  "hover.target": "float",
+
+  "codeLens.enable": true,
+
+  "list.indicator": ">",
+  "list.maxHeight": 10,
+  "list.selectedSignText": " ",
+
+  "tree.key.toggle": ["<tab>", "<space>"],
+  "tree.key.toggleSelection": "t",
+  "tree.key.invoke": ["<cr>", "o"],
+  "tree.key.edit": ["e"],
+  "tree.key.split": "s",
+  "tree.key.vsplit": "v",
+
+  "explorer.width": 30,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.keyMappings.global": {
+    "i": false,
+    "<c-o>": "noop",
+    "<c-i>": "noop",
+    "k": "nodePrev",
+    "j": "nodeNext",
+    "h": "collapse",
+    "l": ["expandable?", "expand", "open"],
+    "J": ["toggleSelection", "nodeNext"],
+    "K": ["toggleSelection", "nodePrev"],
+    "<tab>": "actionMenu",
+    "gk": "expandablePrev",
+    "gj": "expandableNext",
+    "<cr>": ["expandable?", "cd", "open"],
+    "e": "open",
+    "s": "open:split",
+    "v": "open:vsplit",
+    "t": "open:tab",
+    "<bs>": "gotoParent",
+    "gs": "reveal:select",
+    "il": "preview:labeling",
+    "ic": "preview:content",
+    "Il": "previewOnHover:toggle:labeling",
+    "Ic": "previewOnHover:toggle:content",
+    "yo": "copyFilepath",
+    "yn": "copyFilename",
+    "yp": "copyRelativeFilepath",
+    "<<": "gitStage",
+    ">>": "gitUnstage"
+  },
+
+  "prettier.eslintIntegration": true,
+  "prettier.tslintIntegration": true,
+  "prettier.stylelintIntegration": true,
+  "prettier.requireConfig": false,
+  "prettier.printWidth": 80,
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.quoteProps": "as-needed",
+  "prettier.trailingComma": "es5",
+  "prettier.bracketSpacing": true,
+  "prettier.arrowParens": "always",
+  "prettier.htmlWhitespaceSensitivity": "css",
+  "prettier.endOfLine": "lf",
+
+  "eslint.enable": true,
+  "eslint.filetypes": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact"
+  ],
+  "eslint.options": {
+    "extensions": [".js", ".jsx", ".ts", ".tsx"]
+  },
+
+  "tsserver.enable": true,
+  "tsserver.locale": "en",
+  "tsserver.typingsCacheLocation": "",
+  "tsserver.preferences": {
+    "includeCompletionsForModuleExports": true,
+    "includeCompletionsWithSnippetText": true,
+    "includeCompletionsForImportStatements": true
+  },
+
+  "javascript.enable": true,
+  "javascript.format.enable": false,
+  "javascript.suggestionActions.enabled": false,
+  "javascript.validate.enable": false,
+
+  "typescript.enable": true,
+  "typescript.format.enable": false,
+  "typescript.suggestionActions.enabled": false,
+  "typescript.validate.enable": false,
+  "typescript.preferences.includePackageJsonAutoImports": "auto",
+
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+
+  "snippets.ultisnips.enable": true,
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "~/.vim/UltiSnips"
+  ],
+
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
+    "json",
+    "css",
+    "scss",
+    "html",
+    "markdown"
+  ],
+
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "coc.preferences.hoverTarget": "float",
+  "coc.preferences.jumpCommand": "edit",
+
+  "languageserver": {
+    "flow": {
+      "command": "flow",
+      "args": ["lsp"],
+      "filetypes": ["javascript", "javascriptreact"],
+      "initializationOptions": {},
+      "requireRootPattern": true,
+      "settings": {},
+      "rootPatterns": [".flowconfig"]
+    },
+    "graphql": {
+      "command": "graphql-lsp",
+      "args": ["server", "-m", "stream"],
+      "filetypes": ["typescript", "javascript", "typescriptreact", "javascriptreact", "graphql"],
+      "rootPatterns": ["graphql.config.*", ".graphqlrc.*", "package.json"]
+    }
+  }
+}
