@@ -70,9 +70,16 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Rename symbol
 nmap <leader>rn <Plug>(coc-rename)
 
-" Formattazione selezione o documento
+" Formattazione selezione o documento (come VS Code)
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format)
+
+" Prettier specifico (esattamente come Shift+Alt+F in VS Code)
+nmap <M-S-f> :CocCommand prettier.formatFile<CR>
+imap <M-S-f> <ESC>:CocCommand prettier.formatFile<CR>a
+vmap <M-S-f> <Plug>(coc-format-selected)
+
+" Format on save è gestito da coc-settings.json, non qui
 
 augroup mygroup
   autocmd!
@@ -131,7 +138,43 @@ let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 
-" Status line integration
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" Prettier: comandi aggiuntivi come VS Code
+command! -nargs=0 PrettierFormat :CocCommand prettier.formatFile
+command! -nargs=0 PrettierCheck :CocCommand prettier.checkFormat
+
+" Mappature aggiuntive per Prettier
+nnoremap <leader>pr :CocCommand prettier.formatFile<CR>
+nnoremap <leader>pc :CocCommand prettier.checkFormat<CR>
+
+" Toggle format on save
+function! ToggleFormatOnSave()
+  if get(g:, 'format_on_save', 1)
+    let g:format_on_save = 0
+    echo "Format on save: OFF"
+  else
+    let g:format_on_save = 1
+    echo "Format on save: ON"
+  endif
+endfunction
+
+nnoremap <leader>tf :call ToggleFormatOnSave()<CR>
+
+" Prettier status line integration (come VS Code)
+function! PrettierStatus()
+  if exists('*CocAction')
+    let status = CocAction('extensionStats')
+    for ext in status
+      if ext.id == 'coc-prettier' && ext.state == 'activated'
+        return ' ⚡'
+      endif
+    endfor
+  endif
+  return ''
+endfunction
+
+" Integrazione con Airline invece di sostituire statusline
+if exists('*airline#add_statusline_func')
+  call airline#add_statusline_func('PrettierStatus')
+endif
 
 echo "Configurazioni COC caricate!"

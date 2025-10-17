@@ -153,16 +153,26 @@ make uninstall        # Disinstalla
 | `<Space>pb` | Lista buffer aperti |
 | `<Space>pm` | File recenti (MRU) |
 
-### ✏️ Editing
+### ✏️ Editing e Formattazione (come VS Code)
 | Shortcut | Descrizione |
 |----------|-------------|
 | `<Space>w` | Salva file |
 | `<Space>q` | Chiudi file |
 | `<Space>x` | Salva e chiudi |
 | `<Space>f` | Formatta documento/selezione |
+| `<Alt><Shift>f` | Formatta con Prettier (esatto come VS Code) |
+| `<Space>pr` | Prettier: formatta file |
+| `<Space>pc` | Prettier: check formato |
+| `<Space>tf` | Toggle format on save |
 | `<Space>rn` | Rinomina symbol |
 | `<Space>ca` | Code actions |
 | `<Space>qf` | Quick fix |
+
+**Prettier configurato identico a VS Code:**
+- ✅ Semicoloni abilitati (default VS Code)
+- ✅ Doppi apici (default VS Code) 
+- ✅ Format on save automatico
+- ✅ Stesse impostazioni di formattazione
 
 ### 🔍 Navigazione e Ricerca
 | Shortcut | Descrizione |

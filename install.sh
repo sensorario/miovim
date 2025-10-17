@@ -294,17 +294,10 @@ create_example_configs() {
 EOF
 
     # .prettierrc
-    cat > ~/.prettierrc << 'EOF'
-{
-  "semi": false,
-  "singleQuote": true,
-  "tabWidth": 2,
-  "trailingComma": "es5",
-  "printWidth": 80,
-  "bracketSpacing": true,
-  "arrowParens": "always"
-}
-EOF
+    cp prettierrc.example.json ~/.prettierrc
+
+    # .prettierignore
+    cp prettierignore.example ~/.prettierignore
 
     # tsconfig.json esempio
     cat > ~/tsconfig.example.json << 'EOF'

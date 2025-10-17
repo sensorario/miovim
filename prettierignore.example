@@ -1,0 +1,97 @@
+# Prettier ignore file (come VS Code)
+
+# Dipendenze
+node_modules/
+.pnp
+.pnp.js
+
+# Build output
+dist/
+build/
+out/
+.next/
+.nuxt/
+.output/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cache directories
+.cache/
+.parcel-cache/
+.eslintcache
+.prettiercache
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# Temporary folders
+tmp/
+temp/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Package files
+*.tgz
+*.tar.gz
+
+# Documentation build
+docs/build/
+
+# Storybook build outputs
+storybook-static/
+
+# Generated files
+*.generated.*
+*.gen.*
+
+# Minimized files
+*.min.js
+*.min.css
+
+# Vendor files
+vendor/
+third-party/
+
+# Configuration files che non devono essere formattati
+.browserslistrc
+.nvmrc
+
+# File specifici che potrebbero avere formattazione custom
+CHANGELOG.md
+LICENSE
+*.md.hbs
+
+# File template
+*.template.*
+*.tmpl.*
+
+# Assets binari
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.svg
+*.webp
+*.woff
+*.woff2
+*.ttf
+*.eot

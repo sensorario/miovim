@@ -162,6 +162,16 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#formatter='unique_tail'
 
+" Integrazione COC con Airline (evita conflitti)
+let g:airline#extensions#coc#enabled = 1
+let g:airline#extensions#coc#error_symbol = '✗'
+let g:airline#extensions#coc#warning_symbol = '⚠'
+let g:airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
+let g:airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
+
+" Disabilita wordcount per evitare il conflitto
+let g:airline#extensions#wordcount#enabled = 0
+
 " CtrlP
 let g:ctrlp_working_path_mode='ra'
 let g:ctrlp_show_hidden=1

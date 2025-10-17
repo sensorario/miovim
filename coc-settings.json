@@ -70,21 +70,38 @@
     ">>": "gitUnstage"
   },
 
-  "prettier.eslintIntegration": true,
-  "prettier.tslintIntegration": true,
-  "prettier.stylelintIntegration": true,
+  "prettier.eslintIntegration": false,
+  "prettier.tslintIntegration": false,
+  "prettier.stylelintIntegration": false,
   "prettier.requireConfig": false,
+  "prettier.onlyUseLocalVersion": false,
+  "prettier.disableLanguages": [],
+  "prettier.withNodeModules": false,
+  "prettier.useEditorConfig": true,
+  "prettier.resolveGlobalModules": false,
   "prettier.printWidth": 80,
   "prettier.tabWidth": 2,
   "prettier.useTabs": false,
-  "prettier.semi": false,
-  "prettier.singleQuote": true,
+  "prettier.semi": true,
+  "prettier.singleQuote": false,
   "prettier.quoteProps": "as-needed",
+  "prettier.jsxSingleQuote": false,
   "prettier.trailingComma": "es5",
   "prettier.bracketSpacing": true,
+  "prettier.bracketSameLine": false,
   "prettier.arrowParens": "always",
+  "prettier.rangeStart": 0,
+  "prettier.rangeEnd": null,
+  "prettier.parser": "",
+  "prettier.filepath": "",
+  "prettier.requirePragma": false,
+  "prettier.insertPragma": false,
+  "prettier.proseWrap": "preserve",
   "prettier.htmlWhitespaceSensitivity": "css",
+  "prettier.vueIndentScriptAndStyle": false,
   "prettier.endOfLine": "lf",
+  "prettier.embeddedLanguageFormatting": "auto",
+  "prettier.singleAttributePerLine": false,
 
   "eslint.enable": true,
   "eslint.filetypes": [
@@ -130,15 +147,23 @@
 
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
+    "javascriptreact", 
     "typescript",
-    "javascriptreact",
     "typescriptreact",
     "json",
+    "jsonc",
     "css",
     "scss",
+    "less",
     "html",
-    "markdown"
+    "vue",
+    "yaml",
+    "yml",
+    "markdown",
+    "graphql"
   ],
+
+  "coc.preferences.formatOnSave": true,
 
   "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.hoverTarget": "float",
@@ -160,5 +185,49 @@
       "filetypes": ["typescript", "javascript", "typescriptreact", "javascriptreact", "graphql"],
       "rootPatterns": ["graphql.config.*", ".graphqlrc.*", "package.json"]
     }
+  },
+
+  "coc.preferences.bracketEnterImprove": true,
+  "coc.preferences.enableFloatHighlight": true,
+  "coc.preferences.snippetStatusText": "Ⓢ",
+  "coc.preferences.enableMarkdown": true,
+  "coc.preferences.maxFileSize": "10MB",
+  "coc.preferences.previewAutoClose": false,
+  "coc.preferences.enableMessageDialog": true,
+  "coc.preferences.promptInput": true,
+  "coc.preferences.validateMessages": true,
+
+  "prettier.disableSuccessMessage": true,
+  "prettier.statusItemText": "⚡",
+  "prettier.ignorePath": ".prettierignore",
+
+  "coc.preferences.formatOnType": true,
+
+  "[javascript]": {
+    "coc.preferences.formatOnSave": true
+  },
+  "[typescript]": {
+    "coc.preferences.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "coc.preferences.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "coc.preferences.formatOnSave": true
+  },
+  "[json]": {
+    "coc.preferences.formatOnSave": true
+  },
+  "[css]": {
+    "coc.preferences.formatOnSave": true
+  },
+  "[scss]": {
+    "coc.preferences.formatOnSave": true
+  },
+  "[html]": {
+    "coc.preferences.formatOnSave": true
+  },
+  "[markdown]": {
+    "coc.preferences.formatOnSave": true
   }
 }

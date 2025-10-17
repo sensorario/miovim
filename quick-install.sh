@@ -94,6 +94,12 @@ if [ ! -f ~/.prettierrc ]; then
     echo -e "${GREEN}✓ .prettierrc creato${NC}"
 fi
 
+# .prettierignore
+if [ ! -f ~/.prettierignore ]; then
+    cp prettierignore.example ~/.prettierignore
+    echo -e "${GREEN}✓ .prettierignore creato${NC}"
+fi
+
 # tsconfig.json esempio
 if [ ! -f ~/tsconfig.example.json ]; then
     cp tsconfig.example.json ~/tsconfig.example.json
