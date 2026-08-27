@@ -217,20 +217,20 @@ backup_existing_config() {
 # Installa configurazione Vim
 install_vim_config() {
     log_info "Installando configurazione Vim..."
-    
-    # Copia .vimrc
-    cp .vimrc ~/.vimrc
-    
+
+    # Symlink .vimrc (così le modifiche al progetto sono subito attive)
+    ln -sf "$(pwd)/.vimrc" ~/.vimrc
+
     # Copia configurazione COC
     mkdir -p ~/.vim
     cp coc-settings.json ~/.vim/
-    
+
     # Aggiungi configurazioni COC al .vimrc se non già presenti
     if ! grep -q "Configurazioni COC" ~/.vimrc; then
         echo "" >> ~/.vimrc
         cat coc-config.vim >> ~/.vimrc
     fi
-    
+
     log_success "Configurazione Vim installata!"
 }
 

@@ -21,7 +21,6 @@ call plug#begin('~/.vim/plugged')
 " Core plugins
 Plug 'tpope/vim-sensible'              " Configurazioni sensate di base
 Plug 'scrooloose/nerdtree'             " File explorer
-Plug 'jistr/vim-nerdtree-tabs'         " NERDTree tabs
 Plug 'Xuyuanp/nerdtree-git-plugin'     " Git status in NERDTree
 
 " Interfaccia e temi
@@ -284,7 +283,7 @@ augroup javascript_typescript
   autocmd!
   " Auto-formattazione al salvataggio
   autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx PrettierAsync
-  
+
   " Impostazioni specifiche per JS/TS
   autocmd FileType javascript,typescript,javascriptreact,typescriptreact setlocal
     \ tabstop=2
@@ -297,12 +296,15 @@ augroup END
 
 augroup general
   autocmd!
+  " Apri NERDTree all'avvio (approccio ufficiale NERDTree per vim senza argomenti)
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | wincmd p | endif
   " Torna all'ultima posizione del cursore
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-  
+
   " Rimuovi spazi finali al salvataggio
   autocmd BufWritePre * :%s/\s\+$//e
-  
+
   " Crea directory se non esiste
   autocmd BufWritePre * if !isdirectory(expand("<afile>:p:h")) | call mkdir(expand("<afile>:p:h"), "p") | endif
 augroup END
